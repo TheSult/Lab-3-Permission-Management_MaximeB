@@ -44,7 +44,7 @@ namespace Lab_3_Permission_Management
         //  Add a single permission
         public void AddPermission(Permissions permission)
         {
-            permission |= permission;
+            permissions |= permission;
         }
         //  Remove a single permission
         public void RemovePermission(Permissions permission)

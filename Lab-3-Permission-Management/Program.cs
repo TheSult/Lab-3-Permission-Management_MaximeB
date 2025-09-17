@@ -33,7 +33,7 @@ namespace Lab_3_Permission_Management
             managerUser.AddPermission(Permissions.Read);
             managerUser.AddPermission(Permissions.Write);
             managerUser.AddPermission(Permissions.Execute);
-            if (operatorUser.HasPermission(Permissions.Execute))
+            if (managerUser.HasPermission(Permissions.Execute))
                 Console.WriteLine("Manager has execute permission");
             else
                 Console.WriteLine("Manager does not have execute permission");
@@ -41,6 +41,9 @@ namespace Lab_3_Permission_Management
             // Senior: Read, Write
             seniorUser.AddPermission(Permissions.Read);
             seniorUser.AddPermission(Permissions.Write);
+
+            // Remove Write from Senior
+            seniorUser.RemovePermission(Permissions.Write);
             if (seniorUser.HasPermission(Permissions.Write))
                 Console.WriteLine("Senior has write permission");
             else
@@ -55,8 +58,7 @@ namespace Lab_3_Permission_Management
             else
                 Console.WriteLine("Admin does not have full permissions");
 
-            // Remove Write from Senior
-            seniorUser.RemovePermission(Permissions.Write);
+            
             /**
              * Look at tasks description in lab3.1 and complete the remaining tasks
              */
